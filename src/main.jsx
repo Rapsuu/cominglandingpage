@@ -19,7 +19,7 @@ function App() {
       <main id="home">
         <div className="signal"><span className="signal-dot" aria-hidden="true" />Jotain on tekeillä</div>
         <h1><span>Tulossa pian...</span></h1>
-        <p className="intro">Seuraa meitä, niin kuulet ensimmäisten joukossa, kun ToriSniper on valmis.</p>
+        <p className="intro">ToriSniper auttaa löytämään käytettyjen markkinoiden alihinnoitellut tuotteet ja arvioi niiden jälleenmyyntipotentiaalin. Löydä parhaat ostokset nopeammin ja tee parempia päätöksiä datan avulla.</p>
         <nav className="socials" aria-label="Seuraa ToriSniperiä">
           <a className="social-link" href="https://www.instagram.com/torisniper.fi/" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
