@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="ToriSniper — etumatkaa satunnaispelaajiin. Tulossa pian.">
+  <title>ToriSniper — Tulossa pian</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: "DM Sans", sans-serif;
+      background: #07111f;
+      color: #f4f7fe;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-width: 320px;
+      min-height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 50% 45%, rgba(0, 68, 178, .19), transparent 39%),
+        linear-gradient(145deg, #091525 0%, #07111f 55%, #081322 100%);
+    }
+
+    body::before {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      content: "";
+      opacity: .2;
+      background-image: radial-gradient(rgba(183, 205, 242, .35) .6px, transparent .6px);
+      background-size: 28px 28px;
+      mask-image: linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent);
+    }
+
+    .page {
+      position: relative;
+      display: grid;
+      min-height: 100vh;
+      grid-template-rows: auto 1fr auto;
+      padding: 32px clamp(24px, 6vw, 84px) 28px;
+    }
+
+    .brand {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 39px;
+      height: 39px;
+      flex: 0 0 39px;
+      place-items: center;
+      border-radius: 10px;
+      background: #0044b2;
+      box-shadow: 0 5px 20px rgba(0, 68, 178, .32);
+    }
+
+    .brand-mark svg { width: 25px; height: 25px; }
+
+    .brand-copy { display: flex; flex-direction: column; }
+
+    .wordmark {
+      color: #f4f7fe;
+      font-family: Manrope, sans-serif;
+      font-size: 21px;
+      font-weight: 500;
+      letter-spacing: -1px;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .wordmark strong { font-weight: 800; }
+
+    .tagline {
+      margin-top: 6px;
+      color: #b7cdf2;
+      font-family: "DM Sans", sans-serif;
+      font-size: 7.8px;
+      font-weight: 600;
+      letter-spacing: 1.3px;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    main {
+      display: grid;
+      align-content: center;
+      justify-items: center;
+      padding: 48px 0;
+      text-align: center;
+    }
+
+    .signal {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 25px;
+      color: #b7cdf2;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .signal::before, .signal::after {
+      width: 22px;
+      height: 1px;
+      background: rgba(183, 205, 242, .4);
+      content: "";
+    }
+
+    .signal-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #4d94ff;
+      box-shadow: 0 0 12px #4d94ff;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Manrope, sans-serif;
+      font-size: clamp(48px, 8vw, 82px);
+      font-weight: 800;
+      letter-spacing: -.075em;
+      line-height: 1.04;
+    }
+
+    h1 span {
+      color: #73a8ff;
+      background: linear-gradient(100deg, #f4f7fe 6%, #76aaff 87%);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .intro {
+      max-width: 440px;
+      margin: 18px 0 0;
+      color: #9cacc5;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .social-link {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 19px;
+      border: 1px solid rgba(183, 205, 242, .18);
+      border-radius: 9px;
+      background: rgba(16, 31, 52, .66);
+      color: #f4f7fe;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: border-color .2s ease, background .2s ease, transform .2s ease;
+    }
+
+    .social-link:hover {
+      transform: translateY(-2px);
+      border-color: rgba(115, 168, 255, .7);
+      background: rgba(25, 49, 81, .9);
+    }
+
+    .social-link:focus-visible, .brand:focus-visible {
+      outline: 2px solid #73a8ff;
+      outline-offset: 4px;
+    }
+
+    .social-link svg { width: 18px; height: 18px; }
+
+    footer {
+      display: flex;
+      justify-content: center;
+      color: #63748d;
+      font-size: 11px;
+      letter-spacing: .4px;
+    }
+
+    @media (max-width: 480px) {
+      .page { padding: 24px 22px 22px; }
+      .intro { max-width: 310px; font-size: 14px; }
+      .social-link { min-height: 46px; padding: 0 15px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
