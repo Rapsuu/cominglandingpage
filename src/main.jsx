@@ -1,4 +1,5 @@
 import { createRoot } from "react-dom/client";
+import { Analytics } from "@vercel/analytics/react";
 import { Radar } from "lucide-react";
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
       </main>
 
       <footer>Lisää pian. Pysy kuulolla.</footer>
+      <Analytics />
     </div>
   );
 }
